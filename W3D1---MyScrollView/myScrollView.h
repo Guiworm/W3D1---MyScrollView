@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  myScrollView.h
 //  W3D1---MyScrollView
 //
 //  Created by Dylan McCrindle on 2016-11-14.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *rootView;
-
+@interface myScrollView : UIView
 
 @end
-
