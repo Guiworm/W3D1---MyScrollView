@@ -10,12 +10,26 @@
 
 @implementation myScrollView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+	self = [super initWithCoder:coder];
+	if (self) {
+		UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(scrollIt:)];
+		[self addGestureRecognizer:pan];
+	}
+	return self;
 }
-*/
+
+-(void)scrollIt:(UIPanGestureRecognizer *)sender{
+	CGRect frame = self.bounds;
+
+	if(sender.state == UIGestureRecognizerStateChanged){
+		CGPoint translation = [sender translationInView:self];
+		
+		frame.origin.y += translation.y;
+	}
+	self.bounds = frame;
+
+}
 
 @end

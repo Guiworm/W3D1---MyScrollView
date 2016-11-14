@@ -10,4 +10,6 @@
 
 @interface myScrollView : UIView
 
+@property CGSize contentSize;
+
 @end
